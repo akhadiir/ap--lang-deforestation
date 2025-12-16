@@ -2,179 +2,465 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
-<title>Reforest to Restore | AP Lang Synthesis</title>
+<title>Reforest to Restore | AP Lang Synthesis Project</title>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 
+<!-- =====================================================
+GLOBAL STYLES & VARIABLES
+===================================================== -->
 <style>
+
+/* ---------------- ROOT VARIABLES ---------------- */
 :root{
---bg:#f7f7fb; --paper:#fff; --ink:#0f172a; --muted:#475569;
+--bg:#f7f7fb;
+--paper:#ffffff;
+--ink:#0f172a;
+--muted:#475569;
 --line:rgba(15,23,42,.1);
---forest:#166534; --forest-soft:rgba(22,101,52,.1);
---sun:#f59e0b; --sun-soft:rgba(245,158,11,.16);
---shadow:0 10px 22px rgba(2,6,23,.08); --radius:18px;
+
+--forest:#166534;
+--forest-soft:rgba(22,101,52,.1);
+
+--sun:#f59e0b;
+--sun-soft:rgba(245,158,11,.16);
+
+--shadow:0 10px 22px rgba(2,6,23,.08);
+--radius:18px;
+--radius-sm:12px;
 }
 
-*{box-sizing:border-box;margin:0;padding:0}
+/* ---------------- RESET ---------------- */
+*{
+box-sizing:border-box;
+margin:0;
+padding:0;
+}
+
+/* ---------------- BODY ---------------- */
 body{
-font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;
+font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
 background:
 radial-gradient(900px 350px at 20% 0%, rgba(22,101,52,.12), transparent 55%),
 radial-gradient(800px 300px at 85% 10%, rgba(245,158,11,.16), transparent 60%),
 var(--bg);
-color:var(--ink); line-height:1.6;
+color:var(--ink);
+line-height:1.7;
 }
 
+/* ---------------- LAYOUT ---------------- */
 .wrap{
-max-width:1200px; margin:auto; padding:28px 18px;
-display:grid; grid-template-columns:280px 1fr; gap:18px;
+max-width:1300px;
+margin:auto;
+padding:28px 20px;
+display:grid;
+grid-template-columns:300px 1fr;
+gap:20px;
 }
 
+/* ---------------- SIDEBAR ---------------- */
 aside{
-position:sticky; top:18px; padding:16px;
-background:rgba(255,255,255,.85); backdrop-filter:blur(14px);
-border:1px solid var(--line); border-radius:var(--radius);
+position:sticky;
+top:18px;
+padding:18px;
+background:rgba(255,255,255,.9);
+backdrop-filter:blur(16px);
+border:1px solid var(--line);
+border-radius:var(--radius);
 box-shadow:var(--shadow);
+}
+
+aside h3{
+margin-bottom:6px;
+color:var(--forest);
+}
+
+aside p{
+margin-bottom:12px;
+font-size:.95rem;
 }
 
 nav a{
-display:block; padding:10px 12px; margin:6px 0;
-border-radius:14px; color:var(--muted); text-decoration:none;
+display:block;
+padding:10px 14px;
+margin:6px 0;
+border-radius:14px;
+color:var(--muted);
+text-decoration:none;
+transition:all .2s ease;
 }
-nav a:hover{background:#fff;border:1px solid var(--line);color:var(--ink)}
 
-main{display:flex;flex-direction:column;gap:14px}
+nav a:hover{
+background:#fff;
+border:1px solid var(--line);
+color:var(--ink);
+}
+
+/* ---------------- MAIN CONTENT ---------------- */
+main{
+display:flex;
+flex-direction:column;
+gap:16px;
+}
+
 section{
-background:var(--paper); padding:18px;
-border-radius:var(--radius); border:1px solid var(--line);
+background:var(--paper);
+padding:22px;
+border-radius:var(--radius);
+border:1px solid var(--line);
 box-shadow:var(--shadow);
 }
 
-h1{font-size:2.2rem; margin-bottom:10px}
-h2{font-size:1.2rem}
-p{margin:.6rem 0}
-.muted{color:var(--muted)}
+h1{
+font-size:2.3rem;
+margin-bottom:12px;
+}
 
-.two{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-ul{margin-left:18px}
-li{margin:6px 0}
+h2{
+font-size:1.4rem;
+margin-bottom:8px;
+color:var(--forest);
+}
 
-.quote{
-padding:14px; border-left:5px solid var(--forest);
-background:var(--forest-soft); border-radius:14px;
+h3{
+font-size:1.1rem;
+margin-bottom:6px;
+}
+
+p{
+margin:.7rem 0;
+}
+
+.muted{
 color:var(--muted);
 }
 
-footer{text-align:center;color:var(--muted);padding:16px}
-
-@media(max-width:900px){
-.wrap{grid-template-columns:1fr}
-aside{position:relative}
-.two{grid-template-columns:1fr}
+/* ---------------- GRID SECTIONS ---------------- */
+.two{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:16px;
 }
+
+.three{
+display:grid;
+grid-template-columns:1fr 1fr 1fr;
+gap:16px;
+}
+
+ul{
+margin-left:20px;
+}
+
+li{
+margin:8px 0;
+}
+
+/* ---------------- QUOTES ---------------- */
+.quote{
+padding:16px;
+border-left:5px solid var(--forest);
+background:var(--forest-soft);
+border-radius:var(--radius-sm);
+margin:14px 0;
+}
+
+/* ---------------- INFO BOX ---------------- */
+.info-box{
+background:var(--sun-soft);
+padding:16px;
+border-radius:var(--radius-sm);
+border:1px solid rgba(245,158,11,.4);
+margin-top:14px;
+}
+
+footer{
+text-align:center;
+color:var(--muted);
+padding:20px;
+font-size:.9rem;
+}
+
+/* ---------------- RESPONSIVE ---------------- */
+@media(max-width:900px){
+.wrap{
+grid-template-columns:1fr;
+}
+
+aside{
+position:relative;
+}
+
+.two,
+.three{
+grid-template-columns:1fr;
+}
+}
+
 </style>
 </head>
 
 <body>
+
+<!-- =====================================================
+PAGE WRAPPER
+===================================================== -->
 <div class="wrap">
 
+<!-- =====================================================
+SIDEBAR / NAVIGATION
+===================================================== -->
 <aside>
 <h3>Reforest to Restore</h3>
-<p class="muted">AP Lang Synthesis Project</p>
+<p class="muted">AP Language & Composition<br>Synthesis Project</p>
 
-<p><strong>Group Members</strong><br>
+<p>
+<strong>Group Members</strong><br>
 Abderrahmene Khadir<br>
-Bahadir Yuksekkaya</p>
+Bahadir Yuksekkaya
+</p>
 
 <nav>
-<a href="#overview">Overview</a>
-<a href="#problem">Deforestation Problem</a>
-<a href="#solution">Solution</a>
-<a href="#evidence">Evidence</a>
-<a href="#counter">Counterargument</a>
+<a href="#overview">Overview & Context</a>
+<a href="#problem">The Global Problem</a>
+<a href="#causes">Causes of Deforestation</a>
+<a href="#impacts">Environmental Impacts</a>
+<a href="#solution">Proposed Solutions</a>
+<a href="#evidence">Evidence & Data</a>
+<a href="#counter">Counterarguments</a>
+<a href="#synthesis">Synthesis of Sources</a>
 <a href="#action">Call to Action</a>
 <a href="#works">Works Cited</a>
 </nav>
 </aside>
 
+<!-- =====================================================
+MAIN CONTENT
+===================================================== -->
 <main>
 
+<!-- ================= OVERVIEW ================= -->
 <section id="overview">
 <h1>Reforestation Can Reverse the Damage Caused by Global Deforestation</h1>
+
 <p class="muted">
-Deforestation is one of the largest human-driven causes of climate change.
-Cutting forests releases massive amounts of stored carbon, disrupts rainfall,
-and destroys ecosystems. Reforestation offers a realistic solution by restoring
-natural systems that regulate Earth’s climate.
+Climate change is one of the most pressing challenges facing humanity in the
+twenty-first century. While fossil fuel emissions are often emphasized,
+deforestation plays an equally destructive role by eliminating one of Earth’s
+most effective natural carbon sinks.
 </p>
 
-<p><strong>Thesis:</strong> Reforestation and afforestation directly address the
-environmental damage caused by deforestation by capturing carbon, stabilizing
-water cycles, and rebuilding biodiversity critical for long-term climate stability.</p>
+<p>
+Forests regulate the planet’s climate by absorbing carbon dioxide, maintaining
+atmospheric balance, and stabilizing ecosystems. When forests are destroyed,
+these benefits disappear, intensifying global warming and environmental
+instability. As a result, addressing deforestation is not optional—it is
+essential.
+</p>
+
+<p>
+<strong>Thesis:</strong> Reforestation and afforestation directly address the
+environmental damage caused by deforestation by capturing atmospheric carbon,
+restoring disrupted water cycles, supporting biodiversity, and creating a
+sustainable path forward for both human and natural systems.
+</p>
 </section>
 
+<!-- ================= PROBLEM ================= -->
 <section id="problem">
-<h2>The Problem: Deforestation</h2>
+<h2>The Problem: Global Deforestation</h2>
+
 <p>
-Deforestation occurs primarily due to agricultural expansion, logging, mining,
-and urban development. Large forest regions such as the Amazon Rainforest,
-Southeast Asia, and Central Africa are being cleared at alarming rates.
+Deforestation refers to the large-scale removal of forests, often permanently,
+to make way for agriculture, industry, or urban development. According to
+environmental research organizations, millions of acres of forest are lost each
+year, primarily in tropical regions that are vital to global climate regulation.
 </p>
+
+<p>
+The Amazon Rainforest, frequently described as the “lungs of the Earth,” has
+experienced unprecedented rates of clearing. Similar trends are visible in
+Southeast Asia and Central Africa, where rainforests are being replaced with
+plantations, mines, and infrastructure projects.
+</p>
+
 <div class="quote">
-<strong>Key Point:</strong> Deforestation accelerates climate change and
-destabilizes global water systems.
+<strong>Key Claim:</strong> Deforestation does not only affect local ecosystems;
+it destabilizes the global climate system and accelerates climate change
+worldwide.
 </div>
 </section>
 
+<!-- ================= CAUSES ================= -->
+<section id="causes">
+<h2>Primary Causes of Deforestation</h2>
+
+<div class="three">
+<div>
+<h3>Agricultural Expansion</h3>
+<p>
+Large-scale farming operations clear forests to create land for crops and
+livestock. This practice is particularly common in tropical regions where
+soil fertility initially supports rapid agricultural growth.
+</p>
+</div>
+
+<div>
+<h3>Logging & Industry</h3>
+<p>
+Commercial logging supplies timber and paper products but often operates
+without sustainable practices. Illegal logging further accelerates forest
+loss.
+</p>
+</div>
+
+<div>
+<h3>Urban Development</h3>
+<p>
+As populations grow, cities expand into forested areas, permanently
+eliminating ecosystems that once absorbed carbon and regulated rainfall.
+</p>
+</div>
+</div>
+</section>
+
+<!-- ================= IMPACTS ================= -->
+<section id="impacts">
+<h2>Environmental and Social Impacts</h2>
+
+<p>
+The impacts of deforestation extend far beyond the immediate loss of trees.
+Forest destruction leads to increased carbon emissions, loss of biodiversity,
+disrupted weather patterns, and economic instability for communities that rely
+on forest ecosystems.
+</p>
+
+<ul>
+<li>Increased atmospheric carbon dioxide levels</li>
+<li>Loss of wildlife habitats and species extinction</li>
+<li>Disruption of global and regional rainfall cycles</li>
+<li>Soil erosion and reduced agricultural productivity</li>
+</ul>
+
+<div class="info-box">
+<p>
+Forests are home to more than half of the world’s terrestrial species.
+Deforestation directly threatens global biodiversity and ecosystem resilience.
+</p>
+</div>
+</section>
+
+<!-- ================= SOLUTION ================= -->
 <section id="solution">
-<h2>Our Solution: Reforestation and Afforestation</h2>
+<h2>Reforestation and Afforestation as Solutions</h2>
+
+<p>
+Reforestation involves restoring forests in areas where trees were previously
+removed, while afforestation focuses on planting trees in areas that were not
+historically forested. Both strategies are essential components of climate
+mitigation.
+</p>
+
 <div class="two">
 <div>
 <h3>Environmental Benefits</h3>
 <ul>
-<li>Absorbs atmospheric CO₂</li>
-<li>Restores rainfall patterns</li>
-<li>Prevents soil erosion</li>
+<li>Carbon sequestration through photosynthesis</li>
+<li>Improved air and water quality</li>
+<li>Reduced soil erosion and flooding</li>
+<li>Restoration of ecosystems</li>
 </ul>
 </div>
+
 <div>
 <h3>Responsible Implementation</h3>
 <ul>
-<li>Use native species</li>
-<li>Protect restored forests</li>
-<li>Involve local communities</li>
+<li>Use of native and diverse tree species</li>
+<li>Long-term protection and monitoring</li>
+<li>Collaboration with local communities</li>
+<li>Integration with sustainable land use</li>
 </ul>
 </div>
 </div>
 </section>
 
-<section id="counter">
-<h2>Counterargument & Rebuttal</h2>
+<!-- ================= EVIDENCE ================= -->
+<section id="evidence">
+<h2>Evidence Supporting Reforestation</h2>
+
 <p>
-Critics argue reforestation is slow and land-intensive. However, it complements
-renewable energy by removing existing carbon from the atmosphere.
+Scientific studies consistently show that forests act as major carbon sinks.
+Research indicates that reforestation could remove billions of tons of carbon
+dioxide from the atmosphere over the next several decades.
+</p>
+
+<p>
+In addition, countries that have invested in forest restoration have seen
+measurable improvements in biodiversity, water stability, and climate
+resilience.
 </p>
 </section>
 
+<!-- ================= COUNTER ================= -->
+<section id="counter">
+<h2>Counterarguments and Rebuttal</h2>
+
+<p>
+Some critics argue that reforestation is too slow to address the urgency of
+climate change. Others claim that land used for forests could be better utilized
+for agriculture or development.
+</p>
+
+<p>
+However, reforestation is not intended to replace renewable energy or emissions
+reductions. Instead, it complements these strategies by removing existing carbon
+from the atmosphere and restoring natural climate regulation systems.
+</p>
+</section>
+
+<!-- ================= SYNTHESIS ================= -->
+<section id="synthesis">
+<h2>Synthesis of Sources</h2>
+
+<p>
+When analyzing multiple perspectives on climate change, a clear consensus
+emerges: technological solutions alone are insufficient. Natural solutions such
+as reforestation provide long-term benefits that technology cannot replicate.
+</p>
+
+<p>
+By combining scientific data, economic analysis, and ethical considerations,
+reforestation stands out as a practical and morally responsible response to
+deforestation.
+</p>
+</section>
+
+<!-- ================= ACTION ================= -->
 <section id="action">
 <h2>Call to Action</h2>
+
 <ul>
-<li>Support forest protection laws</li>
-<li>Reduce deforestation-linked products</li>
-<li>Donate to reforestation groups</li>
+<li>Support policies that protect existing forests</li>
+<li>Reduce consumption of deforestation-linked products</li>
+<li>Donate to verified reforestation organizations</li>
+<li>Educate others about the importance of forests</li>
 </ul>
 </section>
 
+<!-- ================= WORKS CITED ================= -->
 <section id="works">
 <h2>Works Cited</h2>
+
 <ul>
-<li>Source 1</li>
-<li>Source 2</li>
-<li>Source 3</li>
+<li>Source A – Climate Change and Forests</li>
+<li>Source B – Environmental Science Journal</li>
+<li>Source C – Global Reforestation Data</li>
+<li>Source D – Economic Impacts of Deforestation</li>
 </ul>
 </section>
 
 <footer>
-AP Lang Synthesis Project • Reforest to Restore
+AP Language & Composition Synthesis Project<br>
+Reforest to Restore • Khadir & Yuksekkaya
 </footer>
 
 </main>
