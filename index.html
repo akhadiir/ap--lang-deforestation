@@ -1,11 +1,183 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8" />
-    <title>Test Page</title>
-  </head>
-  <body>
-    <h1>If you see this, the site works.</h1>
-    <p>You’re successfully hosting your own web page.</p>
-  </body>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Reforest to Restore | AP Lang Synthesis</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<style>
+:root{
+--bg:#f7f7fb; --paper:#fff; --ink:#0f172a; --muted:#475569;
+--line:rgba(15,23,42,.1);
+--forest:#166534; --forest-soft:rgba(22,101,52,.1);
+--sun:#f59e0b; --sun-soft:rgba(245,158,11,.16);
+--shadow:0 10px 22px rgba(2,6,23,.08); --radius:18px;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;
+background:
+radial-gradient(900px 350px at 20% 0%, rgba(22,101,52,.12), transparent 55%),
+radial-gradient(800px 300px at 85% 10%, rgba(245,158,11,.16), transparent 60%),
+var(--bg);
+color:var(--ink); line-height:1.6;
+}
+
+.wrap{
+max-width:1200px; margin:auto; padding:28px 18px;
+display:grid; grid-template-columns:280px 1fr; gap:18px;
+}
+
+aside{
+position:sticky; top:18px; padding:16px;
+background:rgba(255,255,255,.85); backdrop-filter:blur(14px);
+border:1px solid var(--line); border-radius:var(--radius);
+box-shadow:var(--shadow);
+}
+
+nav a{
+display:block; padding:10px 12px; margin:6px 0;
+border-radius:14px; color:var(--muted); text-decoration:none;
+}
+nav a:hover{background:#fff;border:1px solid var(--line);color:var(--ink)}
+
+main{display:flex;flex-direction:column;gap:14px}
+section{
+background:var(--paper); padding:18px;
+border-radius:var(--radius); border:1px solid var(--line);
+box-shadow:var(--shadow);
+}
+
+h1{font-size:2.2rem; margin-bottom:10px}
+h2{font-size:1.2rem}
+p{margin:.6rem 0}
+.muted{color:var(--muted)}
+
+.two{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+ul{margin-left:18px}
+li{margin:6px 0}
+
+.quote{
+padding:14px; border-left:5px solid var(--forest);
+background:var(--forest-soft); border-radius:14px;
+color:var(--muted);
+}
+
+footer{text-align:center;color:var(--muted);padding:16px}
+
+@media(max-width:900px){
+.wrap{grid-template-columns:1fr}
+aside{position:relative}
+.two{grid-template-columns:1fr}
+}
+</style>
+</head>
+
+<body>
+<div class="wrap">
+
+<aside>
+<h3>Reforest to Restore</h3>
+<p class="muted">AP Lang Synthesis Project</p>
+
+<p><strong>Group Members</strong><br>
+Abderrahmene Khadir<br>
+Bahadir Yuksekkaya</p>
+
+<nav>
+<a href="#overview">Overview</a>
+<a href="#problem">Deforestation Problem</a>
+<a href="#solution">Solution</a>
+<a href="#evidence">Evidence</a>
+<a href="#counter">Counterargument</a>
+<a href="#action">Call to Action</a>
+<a href="#works">Works Cited</a>
+</nav>
+</aside>
+
+<main>
+
+<section id="overview">
+<h1>Reforestation Can Reverse the Damage Caused by Global Deforestation</h1>
+<p class="muted">
+Deforestation is one of the largest human-driven causes of climate change.
+Cutting forests releases massive amounts of stored carbon, disrupts rainfall,
+and destroys ecosystems. Reforestation offers a realistic solution by restoring
+natural systems that regulate Earth’s climate.
+</p>
+
+<p><strong>Thesis:</strong> Reforestation and afforestation directly address the
+environmental damage caused by deforestation by capturing carbon, stabilizing
+water cycles, and rebuilding biodiversity critical for long-term climate stability.</p>
+</section>
+
+<section id="problem">
+<h2>The Problem: Deforestation</h2>
+<p>
+Deforestation occurs primarily due to agricultural expansion, logging, mining,
+and urban development. Large forest regions such as the Amazon Rainforest,
+Southeast Asia, and Central Africa are being cleared at alarming rates.
+</p>
+<div class="quote">
+<strong>Key Point:</strong> Deforestation accelerates climate change and
+destabilizes global water systems.
+</div>
+</section>
+
+<section id="solution">
+<h2>Our Solution: Reforestation and Afforestation</h2>
+<div class="two">
+<div>
+<h3>Environmental Benefits</h3>
+<ul>
+<li>Absorbs atmospheric CO₂</li>
+<li>Restores rainfall patterns</li>
+<li>Prevents soil erosion</li>
+</ul>
+</div>
+<div>
+<h3>Responsible Implementation</h3>
+<ul>
+<li>Use native species</li>
+<li>Protect restored forests</li>
+<li>Involve local communities</li>
+</ul>
+</div>
+</div>
+</section>
+
+<section id="counter">
+<h2>Counterargument & Rebuttal</h2>
+<p>
+Critics argue reforestation is slow and land-intensive. However, it complements
+renewable energy by removing existing carbon from the atmosphere.
+</p>
+</section>
+
+<section id="action">
+<h2>Call to Action</h2>
+<ul>
+<li>Support forest protection laws</li>
+<li>Reduce deforestation-linked products</li>
+<li>Donate to reforestation groups</li>
+</ul>
+</section>
+
+<section id="works">
+<h2>Works Cited</h2>
+<ul>
+<li>Source 1</li>
+<li>Source 2</li>
+<li>Source 3</li>
+</ul>
+</section>
+
+<footer>
+AP Lang Synthesis Project • Reforest to Restore
+</footer>
+
+</main>
+</div>
+</body>
 </html>
