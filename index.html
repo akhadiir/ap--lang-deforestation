@@ -1,372 +1,374 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Reforest to Restore | AP Lang Synthesis</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>Reforest to Restore | AP Lang Synthesis</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <style>
-    :root{
-      --bg:#f7f7fb;
-      --paper:#ffffff;
-      --ink:#0f172a;
-      --muted:#475569;
-      --line:rgba(15,23,42,.1);
-      --forest:#166534;
-      --forest-soft:rgba(22,101,52,.1);
-      --shadow:0 10px 22px rgba(2,6,23,.08);
-      --radius:18px;
-    }
+<style>
+:root{
+  --bg:#f7f7fb; --paper:#fff; --ink:#0f172a; --muted:#475569;
+  --line:rgba(15,23,42,.1);
+  --forest:#166534; --forest-soft:rgba(22,101,52,.1);
+  --sun:#f59e0b; --sun-soft:rgba(245,158,11,.16);
+  --shadow:0 10px 22px rgba(2,6,23,.08); --radius:18px;
+}
 
-    *{
-      box-sizing:border-box;
-      margin:0;
-      padding:0;
-    }
+*{box-sizing:border-box;margin:0;padding:0;}
+body{
+  font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;
+  background:
+    radial-gradient(900px 350px at 20% 0%, rgba(22,101,52,.12), transparent 55%),
+    radial-gradient(800px 300px at 85% 10%, rgba(245,158,11,.16), transparent 60%),
+    var(--bg);
+  color:var(--ink); line-height:1.7;
+}
 
-    body{
-      font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;
-      background:var(--bg);
-      color:var(--ink);
-      line-height:1.6;
-    }
+.wrap{
+  max-width:1300px; margin:auto; padding:28px 20px;
+  display:grid; grid-template-columns:300px 1fr; gap:20px;
+}
 
-    .wrap{
-      max-width:1200px;
-      margin:auto;
-      padding:30px 20px;
-      display:grid;
-      grid-template-columns:280px 1fr;
-      gap:20px;
-    }
+aside{
+  position:sticky; top:18px; padding:18px;
+  background:rgba(255,255,255,.85); backdrop-filter:blur(16px);
+  border:1px solid var(--line); border-radius:var(--radius);
+  box-shadow:var(--shadow);
+}
 
-    aside{
-      position:sticky;
-      top:20px;
-      padding:18px;
-      background:rgba(255,255,255,.9);
-      border:1px solid var(--line);
-      border-radius:var(--radius);
-      box-shadow:var(--shadow);
-    }
+aside h3{margin-bottom:8px;color:var(--forest);}
+aside p{margin-bottom:12px;font-size:.95rem;}
 
-    nav a{
-      display:block;
-      padding:10px 14px;
-      margin:6px 0;
-      border-radius:14px;
-      color:var(--muted);
-      text-decoration:none;
-    }
+nav a{
+  display:block; padding:10px 14px; margin:6px 0;
+  border-radius:14px; color:var(--muted); text-decoration:none;
+  transition:all .2s ease;
+}
 
-    nav a:hover{
-      background:#fff;
-      border:1px solid var(--line);
-      color:var(--ink);
-    }
+nav a:hover{background:#fff;border:1px solid var(--line);color:var(--ink);}
 
-    main{
-      display:flex;
-      flex-direction:column;
-      gap:18px;
-    }
+main{display:flex;flex-direction:column;gap:18px;}
 
-    section{
-      background:var(--paper);
-      padding:22px;
-      border-radius:var(--radius);
-      border:1px solid var(--line);
-      box-shadow:var(--shadow);
-    }
+section{
+  background:var(--paper); padding:26px;
+  border-radius:var(--radius); border:1px solid var(--line);
+  box-shadow:var(--shadow);
+}
 
-    h1{
-      font-size:2.2rem;
-      margin-bottom:12px;
-    }
+h1{font-size:2.4rem; margin-bottom:14px;}
+h2{font-size:1.5rem; margin-bottom:10px; color:var(--forest);}
+h3{font-size:1.2rem; margin-bottom:8px;}
+p{margin:.8rem 0;}
+.muted{color:var(--muted);}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+.three{display:grid;grid-template-columns:1fr 1fr 1fr;gap:18px;}
+ul{margin-left:22px;}
+li{margin:8px 0;}
+.quote{
+  padding:18px; border-left:5px solid var(--forest);
+  background:var(--forest-soft); border-radius:14px; margin:16px 0;
+}
+.info-box{
+  background:var(--sun-soft); padding:18px;
+  border-radius:14px; border:1px solid rgba(245,158,11,.4); margin-top:16px;
+}
+footer{text-align:center; color:var(--muted); padding:22px; font-size:.9rem;}
 
-    h2{
-      font-size:1.4rem;
-      margin-bottom:10px;
-    }
-
-    h3{
-      margin-top:12px;
-    }
-
-    p{
-      margin:10px 0;
-    }
-
-    ul{
-      margin-left:20px;
-      margin-top:10px;
-    }
-
-    li{
-      margin:8px 0;
-    }
-
-    .quote{
-      padding:16px;
-      background:var(--forest-soft);
-      border-left:6px solid var(--forest);
-      border-radius:14px;
-      margin:14px 0;
-    }
-
-    footer{
-      text-align:center;
-      color:var(--muted);
-      padding:20px;
-    }
-
-    @media(max-width:900px){
-      .wrap{
-        grid-template-columns:1fr;
-      }
-      aside{
-        position:relative;
-      }
-    }
-  </style>
+@media(max-width:950px){
+  .wrap{grid-template-columns:1fr;}
+  aside{position:relative;}
+  .two,.three{grid-template-columns:1fr;}
+}
+</style>
 </head>
-
 <body>
 
 <div class="wrap">
 
-  <!-- SIDEBAR -->
-  <aside>
-    <h3>Reforest to Restore</h3>
-    <p><strong>AP Lang Synthesis Project</strong></p>
+<!-- SIDEBAR -->
+<aside>
+<h3>Reforest to Restore</h3>
+<p class="muted">AP Language & Composition<br>Synthesis Project</p>
 
-    <p>
-      <strong>Group Members</strong><br>
-      Abderrahmene Khadir<br>
-      Bahadir Yuksekkaya
-    </p>
+<p><strong>Group Members</strong><br>
+Abderrahmene Khadir<br>
+Bahadir Yuksekkaya</p>
 
-    <nav>
-      <a href="#overview">Overview</a>
-      <a href="#problem">Deforestation</a>
-      <a href="#causes">Causes</a>
-      <a href="#effects">Effects</a>
-      <a href="#solution">Reforestation</a>
-      <a href="#counter">Counterargument</a>
-      <a href="#action">Call to Action</a>
-      <a href="#works">Works Cited</a>
-    </nav>
-  </aside>
+<nav>
+<a href="#overview">Overview & Context</a>
+<a href="#problem">Global Deforestation Problem</a>
+<a href="#causes">Causes of Deforestation</a>
+<a href="#impacts">Environmental Impacts</a>
+<a href="#wildlife">Impacts on Wildlife</a>
+<a href="#society">Impacts on Society</a>
+<a href="#solution">Solutions</a>
+<a href="#evidence">Evidence Supporting Solutions</a>
+<a href="#counter">Counterarguments</a>
+<a href="#synthesis">Synthesis of Sources</a>
+<a href="#action">Call to Action</a>
+<a href="#works">Works Cited</a>
+</nav>
+</aside>
 
-  <!-- MAIN CONTENT -->
-  <main>
+<!-- MAIN -->
+<main>
 
-    <!-- OVERVIEW -->
-    <section id="overview">
-      <h1>Reforestation Can Help Repair the Damage Caused by Deforestation</h1>
+<!-- OVERVIEW -->
+<section id="overview">
+<h1>Reforestation Can Reverse the Damage Caused by Deforestation</h1>
+<p class="muted">
+Trees are vital for life on Earth. They produce oxygen, store carbon, provide homes for animals, and help control rainfall. Without forests, life on our planet is at risk.
+</p>
+<p>
+Deforestation happens every day for farms, roads, mining, and cities. Humans benefit in the short term, but the long-term consequences include climate change, soil erosion, and species extinction. Reforesting these areas is a key solution to repair ecosystems.
+</p>
+<p>
+<strong>Thesis:</strong> Planting trees restores ecosystems, absorbs carbon, stabilizes rainfall, and protects biodiversity, making it a natural and necessary solution to climate change.
+</p>
+</section>
 
-      <p>
-        Deforestation is one of the most serious environmental problems facing the world today.
-        Forests are being destroyed at alarming rates due to human activity. While forests may
-        seem endless, they are actually limited and extremely important to life on Earth.
-      </p>
-
-      <p>
-        Trees help regulate climate, store carbon, protect soil, and provide homes for millions
-        of plant and animal species. When forests are removed, these natural systems break down.
-        This leads to climate change, habitat loss, and environmental instability.
-      </p>
-
-      <p>
-        Reforestation offers a realistic and effective solution. By planting trees and restoring
-        damaged forest areas, humans can reduce carbon levels, protect biodiversity, and create
-        a healthier planet for future generations.
-      </p>
-
-      <div class="quote">
-        <strong>Thesis:</strong> Reforestation and afforestation directly address the damage caused
-        by deforestation by capturing carbon, restoring ecosystems, and stabilizing the global climate.
-      </div>
-    </section>
-
-    <!-- PROBLEM -->
-    <section id="problem">
-      <h2>The Problem: Global Deforestation</h2>
-
-      <p>
-        Deforestation refers to the large-scale removal of forests, usually to make room for
-        agriculture, logging, or urban development. Each year, millions of acres of forest land
-        are destroyed, especially in tropical regions.
-      </p>
-
-      <p>
-        The Amazon Rainforest, often called the “lungs of the Earth,” has lost vast amounts of
-        forest cover over the past several decades. Similar destruction is occurring in
-        Southeast Asia and Central Africa.
-      </p>
-
-      <p>
-        Once forests are removed, the land often becomes dry, infertile, and vulnerable to erosion.
-        This makes it difficult for ecosystems to recover naturally.
-      </p>
-    </section>
-
-    <!-- CAUSES -->
-    <section id="causes">
-      <h2>Main Causes of Deforestation</h2>
-
-      <ul>
-        <li><strong>Agriculture:</strong> Forests are cleared to grow crops and raise livestock.</li>
-        <li><strong>Logging:</strong> Trees are cut for wood, paper, and construction materials.</li>
-        <li><strong>Urban Expansion:</strong> Cities and roads replace forest land.</li>
-        <li><strong>Mining:</strong> Natural resources are extracted at the cost of ecosystems.</li>
-      </ul>
-
-      <p>
-        These activities often prioritize short-term economic gain over long-term environmental
-        health. In many cases, forests are destroyed faster than they can regenerate.
-      </p>
-    </section>
-
-    <!-- EFFECTS -->
-    <section id="effects">
-      <h2>Environmental Effects of Deforestation</h2>
-
-      <p>
-        One of the most serious effects of deforestation is climate change. Trees absorb carbon
-        dioxide, a major greenhouse gas. When trees are removed, this carbon is released back
-        into the atmosphere.
-      </p>
-
-      <p>
-        Deforestation also disrupts the water cycle. Forests help control rainfall and prevent
-        flooding. Without trees, areas become more prone to droughts and natural disasters.
-      </p>
-
-      <p>
-        Wildlife is also heavily impacted. Many species lose their habitats and are pushed toward
-        extinction as forests disappear.
-      </p>
-    </section>
-
-    <!-- SOLUTION -->
-    <section id="solution">
-      <h2>The Solution: Reforestation and Afforestation</h2>
-
-      <p>
-        Reforestation involves replanting trees in areas where forests once existed. Afforestation
-        involves planting trees in areas that previously had no forest cover.
-      </p>
-
-      <p>
-        These practices help absorb carbon dioxide, improve air quality, restore habitats, and
-        strengthen ecosystems. When done correctly using native species, reforestation can be
-        highly effective.
-      </p>
-
-      <ul>
-        <li>Reduces carbon emissions</li>
-        <li>Improves soil quality</li>
-        <li>Restores wildlife habitats</li>
-        <li>Supports local communities</li>
-      </ul>
-    </section>
-
-    <!-- COUNTERARGUMENT -->
-    <section id="counter">
-      <h2>Counterargument and Rebuttal</h2>
-
-      <p>
-        Some critics argue that reforestation takes too long and cannot fix climate change on its
-        own. While it is true that trees need time to grow, reforestation is meant to work alongside
-        other solutions like renewable energy.
-      </p>
-
-      <p>
-        Reforestation removes carbon that is already in the atmosphere, something many other
-        solutions cannot do. Because of this, it remains an essential part of climate action.
-      </p>
-    </section>
-
-    <!-- ACTION -->
-    <section id="action">
-      <h2>Call to Action</h2>
-
-      <p>
-        Individuals and governments must take action to protect existing forests and support
-        reforestation efforts. Even small actions can make a difference.
-      </p>
-
-      <ul>
-        <li>Support laws that protect forests</li>
-        <li>Reduce use of deforestation-linked products</li>
-        <li>Donate to environmental organizations</li>
-        <li>Raise awareness about deforestation</li>
-      </ul>
-    </section>
-
-    <!-- WORKS CITED -->
-    <section id="works">
-      <h2>Works Cited</h2>
-      <ul>
-
-        <li>
-          Food and Agriculture Organization of the United Nations.
-          <em>State of the World’s Forests 2022.</em>
-          FAO, 2022,
-          https://www.fao.org/state-of-forests/en/.
-          Accessed 16 Dec. 2025.
-        </li>
-
-        <li>
-          World Wildlife Fund.
-          “Deforestation and Forest Degradation.”
-          <em>World Wildlife Fund</em>,
-          https://www.worldwildlife.org/threats/deforestation-and-forest-degradation.
-          Accessed 16 Dec. 2025.
-        </li>
-
-        <li>
-          National Aeronautics and Space Administration.
-          “The Importance of Forests.”
-          <em>NASA Earth Observatory</em>,
-          https://earthobservatory.nasa.gov/features/Forests.
-          Accessed 16 Dec. 2025.
-        </li>
-
-        <li>
-          Greenpeace.
-          “Causes of Deforestation.”
-          <em>Greenpeace International</em>,
-          https://www.greenpeace.org/international/story/15211/causes-of-deforestation/.
-          Accessed 16 Dec. 2025.
-        </li>
-
-        <li>
-          United Nations Environment Programme.
-          “Why Forests Matter.”
-          <em>UNEP</em>,
-          https://www.unep.org/explore-topics/forests/why-forests-matter.
-          Accessed 16 Dec. 2025.
-        </li>
-
-        <li>
-          National Geographic Society.
-          “Deforestation.”
-          <em>National Geographic</em>,
-          https://www.nationalgeographic.com/environment/article/deforestation.
-          Accessed 16 Dec. 2025.
-        </li>
-
-      </ul>
-    </section>
-
-    <footer>
-      AP Lang Synthesis Project • Reforest to Restore
-    </footer>
-
-  </main>
+<!-- PROBLEM -->
+<section id="problem">
+<h2>The Global Deforestation Problem</h2>
+<p>
+Deforestation is happening faster than nature can recover. Tropical rainforests, including the Amazon, Congo Basin, and Southeast Asia, are being cleared at alarming rates. Millions of acres are lost every year.
+</p>
+<div class="quote">
+<strong>Key Point:</strong> Rapid deforestation releases carbon into the atmosphere, reduces biodiversity, and disrupts water cycles.
 </div>
+<p>
+Experts warn that if current rates continue, the planet could lose entire ecosystems that took thousands of years to develop. Forests are not only important for wildlife but also for regulating climate and supporting human life.
+</p>
+</section>
 
+<!-- CAUSES -->
+<section id="causes">
+<h2>Causes of Deforestation</h2>
+<div class="three">
+<div>
+<h3>Agricultural Expansion</h3>
+<p>
+Farmers clear forests to grow crops like soy, palm oil, and corn, or to raise livestock. Agriculture is the largest driver of deforestation worldwide. While it provides food and income, it destroys habitats and reduces carbon storage.
+</p>
+</div>
+<div>
+<h3>Logging and Timber</h3>
+<p>
+Trees are cut down for wood, furniture, paper, and fuel. Legal logging occurs in some regions, but illegal logging often removes trees faster than they can regrow. Logging fragments forests, making it harder for animals to survive.
+</p>
+</div>
+<div>
+<h3>Urbanization and Development</h3>
+<p>
+Cities and towns expand to accommodate growing populations. Roads, buildings, and infrastructure replace forests. Urban development also increases pollution and disrupts local climates.
+</p>
+</div>
+</div>
+<div class="info-box">
+<p>
+Other causes include mining, wildfires, and climate change itself. Each of these reduces forest cover and contributes to global environmental problems.
+</p>
+</div>
+</section>
+
+<!-- IMPACTS -->
+<section id="impacts">
+<h2>Environmental Impacts of Deforestation</h2>
+<p>
+Cutting down forests affects air, soil, water, and climate. Carbon stored in trees is released into the atmosphere, increasing global warming. Soil loses its nutrients and becomes prone to erosion, while rivers can flood or dry up due to changes in rainfall.
+</p>
+<ul>
+<li>Increased carbon dioxide in the atmosphere</li>
+<li>Loss of biodiversity</li>
+<li>Soil degradation and erosion</li>
+<li>Disruption of rainfall and water cycles</li>
+<li>Higher risk of natural disasters</li>
+</ul>
+<div class="quote">
+<strong>Quote:</strong> "Forests are the lungs of the Earth. Destroy them, and we risk suffocating the planet." – Environmental Researcher
+</div>
+<p>
+Deforestation also reduces the planet's ability to recover from climate change, making it a long-term problem for humans and wildlife.
+</p>
+</section>
+
+<!-- WILDLIFE -->
+<section id="wildlife">
+<h2>Impact on Wildlife</h2>
+<p>
+Forests provide homes for millions of species. When trees are cut down, animals lose their habitats, food, and shelter. Many species face extinction as forests disappear.
+</p>
+<ul>
+<li>Birds lose nesting areas</li>
+<li>Mammals lose food sources</li>
+<li>Insects and plants decline</li>
+<li>Predator-prey relationships are disrupted</li>
+</ul>
+<p>
+Protected and restored forests help animals recover and maintain biodiversity.
+</p>
+</section>
+
+<!-- SOCIETY -->
+<section id="society">
+<h2>Impact on Human Societies</h2>
+<p>
+Humans rely on forests for food, water, medicine, and climate regulation. Deforestation can increase poverty and reduce access to resources for local communities. Indigenous people are often displaced, losing cultural and economic resources.
+</p>
+<p>
+Forests also influence rainfall and agriculture. Losing forests can reduce crop yields and increase food insecurity worldwide.
+</p>
+</section>
+
+<!-- SOLUTIONS -->
+<section id="solution">
+<h2>Solutions: Reforestation and Afforestation</h2>
+<p>
+Reforestation restores trees to areas that were deforested. Afforestation plants trees in areas that never had forests. Both reduce carbon, restore ecosystems, and protect wildlife.
+</p>
+<div class="two">
+<div>
+<h3>Environmental Benefits</h3>
+<ul>
+<li>Absorbs carbon dioxide</li>
+<li>Restores rainfall patterns</li>
+<li>Prevents soil erosion</li>
+<li>Supports biodiversity</li>
+<li>Reduces flooding</li>
+<li>Improves air and water quality</li>
+</ul>
+</div>
+<div>
+<h3>Responsible Practices</h3>
+<ul>
+<li>Use native species</li>
+<li>Protect forests long-term</li>
+<li>Involve local communities</li>
+<li>Combine with sustainable agriculture</li>
+<li>Monitor and maintain forests</li>
+<li>Educate the public about forests</li>
+</ul>
+</div>
+</div>
+</section>
+
+<!-- EVIDENCE -->
+<section id="evidence">
+<h2>Evidence Supporting Reforestation</h2>
+<p>
+NASA studies show forests capture billions of tons of carbon each year. UN reports highlight the benefits of tree planting for rainfall, soil health, and wildlife. Countries that plant more trees see positive changes in climate and environment.
+</p>
+<p>
+Reforestation is also cost-effective compared to artificial carbon removal technologies. It is natural, long-term, and provides multiple benefits for humans and the planet.
+</p>
+<div class="info-box">
+<p>
+Example: Brazil's reforestation efforts in the Atlantic Forest have restored thousands of acres, increased wildlife populations, and reduced carbon emissions significantly.
+</p>
+</div>
+</section>
+
+<!-- COUNTER -->
+<section id="counter">
+<h2>Counterarguments and Rebuttal</h2>
+<p>
+Some critics argue reforestation is slow and takes up too much land. Others think technology or renewable energy should be prioritized.
+</p>
+<p>
+Reforestation complements technological solutions. It restores natural carbon sinks, improves ecosystems, and supports human and animal life simultaneously. It is not a replacement but part of a comprehensive climate solution.
+</p>
+</section>
+
+<!-- SYNTHESIS -->
+<section id="synthesis">
+<h2>Synthesis of Sources</h2>
+<p>
+Multiple sources, including NASA, UN, WWF, and academic research, agree forests are critical. Combining these sources shows planting trees is necessary, effective, and supported by evidence worldwide.
+</p>
+<p>
+Reforestation works with energy solutions, sustainable farming, and conservation programs. This combined approach strengthens the fight against climate change and promotes environmental recovery.
+</p>
+</section>
+
+<!-- ACTION -->
+<section id="action">
+<h2>Call to Action</h2>
+<ul>
+<li>Support forest protection laws</li>
+<li>Buy sustainable products</li>
+<li>Donate to reforestation groups</li>
+<li>Participate in local tree planting events</li>
+<li>Educate others about forests</li>
+<li>Encourage businesses to reduce deforestation</li>
+<li>Support sustainable agriculture</li>
+<li>Monitor and maintain local green spaces</li>
+<li>Advocate for international climate agreements</li>
+<li>Use resources responsibly to reduce impact</li>
+</ul>
+</section>
+
+<!-- WORKS CITED -->
+<!-- WORKS CITED -->
+<section id="works">
+  <h2>Works Cited</h2>
+  <ul>
+
+    <li>
+      Food and Agriculture Organization of the United Nations.
+      <em>State of the World’s Forests 2022.</em>
+      FAO, 2022,
+      https://www.fao.org/state-of-forests/en/.
+      Accessed 16 Dec. 2025.
+    </li>
+
+    <li>
+      World Wildlife Fund.
+      “Deforestation and Forest Degradation.”
+      <em>World Wildlife Fund</em>,
+      https://www.worldwildlife.org/threats/deforestation-and-forest-degradation.
+      Accessed 16 Dec. 2025.
+    </li>
+
+    <li>
+      National Aeronautics and Space Administration.
+      “The Importance of Forests.”
+      <em>NASA Earth Observatory</em>,
+      https://earthobservatory.nasa.gov/features/Forests.
+      Accessed 16 Dec. 2025.
+    </li>
+
+    <li>
+      Greenpeace.
+      “Causes of Deforestation.”
+      <em>Greenpeace International</em>,
+      https://www.greenpeace.org/international/story/15211/causes-of-deforestation/.
+      Accessed 16 Dec. 2025.
+    </li>
+
+    <li>
+      United Nations Environment Programme.
+      “Why Forests Matter.”
+      <em>UNEP</em>,
+      https://www.unep.org/explore-topics/forests/why-forests-matter.
+      Accessed 16 Dec. 2025.
+    </li>
+
+    <li>
+      National Geographic Society.
+      “Deforestation.”
+      <em>National Geographic</em>,
+      https://www.nationalgeographic.com/environment/article/deforestation.
+      Accessed 16 Dec. 2025.
+    </li>
+
+  </ul>
+</section>
+
+<footer>
+AP Language & Composition Synthesis Project • Reforest to Restore • Khadir & Yuksekkaya
+</footer>
+
+</main>
+</div>
 </body>
 </html>
